@@ -22,6 +22,22 @@ void incrementClock()
 	clockTimer.tickCounter++;
 }
 
+
+uint32_t getClockOut()
+{
+	return clockTimer.tickOut;
+}
+
+uint32_t getClockIn()
+{
+	return clockTimer.tickIn;
+}
+
+uint32_t getTick()
+{
+	return clockTimer.tickCounter;
+}
+
 void setClockIn()
 {
 	clockTimer.tickIn = clockTimer.tickCounter;
@@ -31,6 +47,18 @@ void setClockIn()
 void setClockOut()
 {
 	clockTimer.tickOut = clockTimer.tickCounter;
+
+}
+
+void resetTicks()
+{
+	clockTimer.tickIn = 0;
+	clockTimer.tickOut = 0;
+}
+
+uint8_t isInvalidClock()
+{
+	return (getDifference() == clockTimer.tickOut);
 }
 
 uint32_t getDifference()
@@ -39,9 +67,6 @@ uint32_t getDifference()
 	if(clockTimer.tickOut > clockTimer.tickIn)
 	{
 		differenceTime = clockTimer.tickOut - clockTimer.tickIn;
-		clockTimer.tickOut = 0;
-		 clockTimer.tickIn = 0;
 	}
 	return differenceTime;
 }
-

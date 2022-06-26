@@ -10,12 +10,12 @@
 
 #include "main.h"
 
-typedef enum
-{
-	BTN_NON = 0,
-	BTN_1 ,
-	BTN_2
-}BTN_NUMBER;
+//typedef enum
+//{
+//	BTN_NON = 0,
+//	BTN_1 ,
+//	BTN_2
+//}BTN_NUMBER;
 
 typedef enum
 {
