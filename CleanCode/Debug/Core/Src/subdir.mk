@@ -5,10 +5,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/FlashLightStateMachine.c \
 ../Core/Src/btn.c \
 ../Core/Src/clock.c \
 ../Core/Src/main.c \
 ../Core/Src/myMain.c \
+../Core/Src/stateMachine.c \
 ../Core/Src/stm32l4xx_hal_msp.c \
 ../Core/Src/stm32l4xx_it.c \
 ../Core/Src/syscalls.c \
@@ -16,10 +18,12 @@ C_SRCS += \
 ../Core/Src/system_stm32l4xx.c 
 
 OBJS += \
+./Core/Src/FlashLightStateMachine.o \
 ./Core/Src/btn.o \
 ./Core/Src/clock.o \
 ./Core/Src/main.o \
 ./Core/Src/myMain.o \
+./Core/Src/stateMachine.o \
 ./Core/Src/stm32l4xx_hal_msp.o \
 ./Core/Src/stm32l4xx_it.o \
 ./Core/Src/syscalls.o \
@@ -27,10 +31,12 @@ OBJS += \
 ./Core/Src/system_stm32l4xx.o 
 
 C_DEPS += \
+./Core/Src/FlashLightStateMachine.d \
 ./Core/Src/btn.d \
 ./Core/Src/clock.d \
 ./Core/Src/main.d \
 ./Core/Src/myMain.d \
+./Core/Src/stateMachine.d \
 ./Core/Src/stm32l4xx_hal_msp.d \
 ./Core/Src/stm32l4xx_it.d \
 ./Core/Src/syscalls.d \
@@ -45,7 +51,7 @@ Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/btn.d ./Core/Src/btn.o ./Core/Src/btn.su ./Core/Src/clock.d ./Core/Src/clock.o ./Core/Src/clock.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/myMain.d ./Core/Src/myMain.o ./Core/Src/myMain.su ./Core/Src/stm32l4xx_hal_msp.d ./Core/Src/stm32l4xx_hal_msp.o ./Core/Src/stm32l4xx_hal_msp.su ./Core/Src/stm32l4xx_it.d ./Core/Src/stm32l4xx_it.o ./Core/Src/stm32l4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32l4xx.d ./Core/Src/system_stm32l4xx.o ./Core/Src/system_stm32l4xx.su
+	-$(RM) ./Core/Src/FlashLightStateMachine.d ./Core/Src/FlashLightStateMachine.o ./Core/Src/FlashLightStateMachine.su ./Core/Src/btn.d ./Core/Src/btn.o ./Core/Src/btn.su ./Core/Src/clock.d ./Core/Src/clock.o ./Core/Src/clock.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/myMain.d ./Core/Src/myMain.o ./Core/Src/myMain.su ./Core/Src/stateMachine.d ./Core/Src/stateMachine.o ./Core/Src/stateMachine.su ./Core/Src/stm32l4xx_hal_msp.d ./Core/Src/stm32l4xx_hal_msp.o ./Core/Src/stm32l4xx_hal_msp.su ./Core/Src/stm32l4xx_it.d ./Core/Src/stm32l4xx_it.o ./Core/Src/stm32l4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32l4xx.d ./Core/Src/system_stm32l4xx.o ./Core/Src/system_stm32l4xx.su
 
 .PHONY: clean-Core-2f-Src
 
