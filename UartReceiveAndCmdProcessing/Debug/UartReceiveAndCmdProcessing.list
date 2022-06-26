@@ -535,7 +535,7 @@ int commTask()
  8000630:	af00      	add	r7, sp, #0
 	uint8_t ch;
 
-	//HAL_StatusTypeDef Status = HAL_UART_Receive(&huart2, &ch, 1, 500);
+	//HAL_StatusTypeDef Status = HAL_UART_Receive(&huart2, &ch, 1, 0);
 
 	HAL_StatusTypeDef Status = HAL_UART_Receive(&huart2, &ch, 1, 10000);
  8000632:	1db9      	adds	r1, r7, #6

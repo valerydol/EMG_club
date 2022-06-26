@@ -1,33 +1,10 @@
-21:21:21 **** Incremental Build of configuration Debug for project timers ****
+18:36:53 **** Build of configuration Debug for project timers ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'handleCommand':
-../Core/Src/main.c:168:16: warning: pointer targets in passing argument 1 of 'strtok' differ in signedness [-Wpointer-sign]
-  168 |   res = strtok(cmdbuffer, delim);
-      |                ^~~~~~~~~
-      |                |
-      |                uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:25:
-c:\st\stm32cubeide_1.9.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127\tools\arm-none-eabi\include\string.h:50:16: note: expected 'char * restrict' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   50 | char  *strtok (char *__restrict, const char *__restrict);
-      |                ^
-../Core/Src/main.c:162:7: warning: unused variable 'params' [-Wunused-variable]
-  162 |   int params = 0;
-      |       ^~~~~~
-../Core/Src/main.c:158:8: warning: unused variable 'cmd' [-Wunused-variable]
-  158 |   char cmd[20];
-      |        ^~~
-arm-none-eabi-gcc -o "timers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\timers\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: timers.elf
- 
 arm-none-eabi-size   timers.elf 
-arm-none-eabi-objdump -h -S  timers.elf  > "timers.list"
    text	   data	    bss	    dec	    hex	filename
   21380	    120	   1912	  23412	   5b74	timers.elf
 Finished building: default.size.stdout
  
-Finished building: timers.list
- 
 
-21:21:22 Build Finished. 0 errors, 3 warnings. (took 1s.14ms)
+18:36:54 Build Finished. 0 errors, 0 warnings. (took 238ms)
 

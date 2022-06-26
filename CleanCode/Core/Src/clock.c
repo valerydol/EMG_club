@@ -15,13 +15,24 @@ void initClock()
 	clockTimer.tickCounter = 0;
 	clockTimer.tickIn = 0;
 	clockTimer.tickOut = 0;
+	clockTimer.tickDoubleClickCounter = DOUBLI_CLICK_MS;
 }
 
 void incrementClock()
 {
 	clockTimer.tickCounter++;
+	clockTimer.tickDoubleClickCounter--;
 }
 
+void resetDoubleClickTimer()
+{
+	clockTimer.tickDoubleClickCounter = DOUBLI_CLICK_MS;
+}
+
+uint32_t getDoubleClickTimer()
+{
+	return clockTimer.tickDoubleClickCounter;
+}
 
 uint32_t getClockOut()
 {
@@ -47,7 +58,6 @@ void setClockIn()
 void setClockOut()
 {
 	clockTimer.tickOut = clockTimer.tickCounter;
-
 }
 
 void resetTicks()

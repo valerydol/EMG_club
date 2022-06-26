@@ -103,6 +103,7 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim6);
   printf("version %d", version);
 
+  myMain();
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -60,8 +60,8 @@ all: main-build
 main-build: CleanCode.elf secondary-outputs
 
 # Tool invocations
-CleanCode.elf CleanCode.map: $(OBJS) $(USER_OBJS) C:\Users\micha\STM32CubeIDE\EMG_club\EMG\CleanCode\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\micha\STM32CubeIDE\EMG_club\EMG\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CleanCode.elf CleanCode.map: $(OBJS) $(USER_OBJS) C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -9,7 +9,7 @@
 #define INC_CLOCK_H_
 
 #include "main.h"
-#define DOUBLI_CLICK_MS 400
+#define DOUBLI_CLICK_MS 200
 struct ClockTimer{
 
 	uint32_t tickCounter;
@@ -30,6 +30,8 @@ void resetTicks();
 uint8_t isInvalidClock();
 uint32_t getDifference();
 
+void resetDoubleClickTimer();
+uint32_t getDoubleClickTimer();
 
 
 #endif /* INC_CLOCK_H_ */

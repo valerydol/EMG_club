@@ -1,4 +1,4 @@
-20:51:56 **** Incremental Build of configuration Debug for project Interrups ****
+18:36:48 **** Build of configuration Debug for project Interrups ****
 make -j12 all 
 arm-none-eabi-size   Interrups.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Interrups.elf
 Finished building: default.size.stdout
  
 
-20:51:56 Build Finished. 0 errors, 0 warnings. (took 237ms)
+18:36:49 Build Finished. 0 errors, 0 warnings. (took 217ms)
 

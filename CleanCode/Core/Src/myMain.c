@@ -8,13 +8,13 @@
 
 #include "myMain.h"
 #include "clock.h"
-#include "btn.h"
+//#include "btn.h"
 #include "main.h"
-BUTTON btn1;
-BUTTON btn2;
+
 #define LONG_PRESS_MS 600
 
-
+BUTTON btn1;
+BUTTON btn2;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim)
 {
@@ -31,14 +31,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 	if(GPIO_Pin == BTN_Pin)
 	{
-		//state = HAL_GPIO_ReadPin(btn1.GPIO_port, btn1.GPIO_Pin);
-		state = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
+		state = HAL_GPIO_ReadPin(btn1.GPIO_port, btn1.GPIO_Pin);
+		//state = HAL_GPIO_ReadPin(BTN_GPIO_Port, BTN_Pin);
 
 	}
 	if (GPIO_Pin == BTN_2_Pin)
 	{
-		//state = HAL_GPIO_ReadPin(btn2.GPIO_port, btn2.GPIO_Pin);
-		state = HAL_GPIO_ReadPin(BTN_2_GPIO_Port, BTN_2_Pin);
+		state = HAL_GPIO_ReadPin(btn2.GPIO_port, btn2.GPIO_Pin);
+		//state = HAL_GPIO_ReadPin(BTN_2_GPIO_Port, BTN_2_Pin);
 	}
 
 	lastState = state;
@@ -94,8 +94,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 int myMain ()
 {
 	initClock();
-	Button_init(&btn1, BTN_GPIO_Port , BTN_Pin);
-	Button_init(&btn2,BTN_2_GPIO_Port , BTN_2_Pin);
+	Button_init(&btn1, BTN_GPIO_Port, BTN_Pin);
+	Button_init(&btn2, BTN_2_GPIO_Port, BTN_2_Pin);
 
 	while(1)
 	{

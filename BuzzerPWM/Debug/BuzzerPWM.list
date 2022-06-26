@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00026178  00000000  00000000  00033cb0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000ffab  00000000  00000000  00059e28  2**0
+ 17 .debug_line   0000ffa5  00000000  00000000  00059e28  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f0473  00000000  00000000  00069dd3  2**0
+ 18 .debug_str    000f0473  00000000  00000000  00069dcd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0015a246  2**0
+ 19 .comment      00000050  00000000  00000000  0015a240  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003c5c  00000000  00000000  0015a298  2**2
+ 20 .debug_frame  00003c5c  00000000  00000000  0015a290  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -377,16 +377,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim)
 		HAL_TIM_Base_Stop_IT(&htim3);
  80004e8:	481d      	ldr	r0, [pc, #116]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0x94>)
  80004ea:	f002 fbad 	bl	8002c48 <HAL_TIM_Base_Stop_IT>
-
 		return;
  80004ee:	e030      	b.n	8000552 <HAL_TIM_PeriodElapsedCallback+0x86>
 	}
-	__HAL_TIM_SET_COUNTER(&htim3 , 0);
+	__HAL_TIM_SET_COUNTER(&htim3 , 0);// clock counter = 0
  80004f0:	4b1b      	ldr	r3, [pc, #108]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0x94>)
  80004f2:	681b      	ldr	r3, [r3, #0]
  80004f4:	2200      	movs	r2, #0
  80004f6:	625a      	str	r2, [r3, #36]	; 0x24
-	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 10000 / tones[counter] / 2);// clock counter = 0
+	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 10000 / tones[counter] / 2); // period
  80004f8:	4b17      	ldr	r3, [pc, #92]	; (8000558 <HAL_TIM_PeriodElapsedCallback+0x8c>)
  80004fa:	681b      	ldr	r3, [r3, #0]
  80004fc:	4a19      	ldr	r2, [pc, #100]	; (8000564 <HAL_TIM_PeriodElapsedCallback+0x98>)
@@ -419,18 +418,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim)
  8000542:	461a      	mov	r2, r3
  8000544:	4b06      	ldr	r3, [pc, #24]	; (8000560 <HAL_TIM_PeriodElapsedCallback+0x94>)
  8000546:	60da      	str	r2, [r3, #12]
-
-
-	//__HAL_TIM_SET_AUTORELOAD(&htim6, tones[counter]);// set new clock period
-	//HAL_TIM_Base_Start_IT(&htim6);// start interrupt
-	//HAL_Delay(500);
 	counter++;
  8000548:	4b03      	ldr	r3, [pc, #12]	; (8000558 <HAL_TIM_PeriodElapsedCallback+0x8c>)
  800054a:	681b      	ldr	r3, [r3, #0]
  800054c:	3301      	adds	r3, #1
  800054e:	4a02      	ldr	r2, [pc, #8]	; (8000558 <HAL_TIM_PeriodElapsedCallback+0x8c>)
  8000550:	6013      	str	r3, [r2, #0]
-
 }
  8000552:	3708      	adds	r7, #8
  8000554:	46bd      	mov	sp, r7
@@ -441,9 +434,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef * htim)
  8000564:	20000000 	.word	0x20000000
 
 08000568 <HAL_GPIO_EXTI_Callback>:
-//	  HAL_TIM_Base_Start_IT(&htim6);
-//	  isBuzzer = false;
-//}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -473,11 +463,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		 HAL_TIM_Base_Start_IT(&htim6);
  8000596:	480a      	ldr	r0, [pc, #40]	; (80005c0 <HAL_GPIO_EXTI_Callback+0x58>)
  8000598:	f002 fae6 	bl	8002b68 <HAL_TIM_Base_Start_IT>
+	{
+		HAL_TIM_Base_Stop(&htim3);
 		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 		HAL_TIM_Base_Stop_IT(&htim6);
-
 	}
-
 }
  800059c:	e009      	b.n	80005b2 <HAL_GPIO_EXTI_Callback+0x4a>
 		HAL_TIM_Base_Stop(&htim3);
@@ -543,7 +533,7 @@ int main(void)
   HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
  80005e6:	2036      	movs	r0, #54	; 0x36
  80005e8:	f000 fca9 	bl	8000f3e <HAL_NVIC_EnableIRQ>
- // HAL_TIM_Base_Start_IT(&htim6);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
