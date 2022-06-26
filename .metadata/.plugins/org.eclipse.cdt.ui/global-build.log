@@ -1,243 +1,161 @@
-18:28:52 **** Incremental Build of configuration Debug for project CleanCode ****
+20:01:45 **** Incremental Build of configuration Debug for project CleanCode ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CleanCode.elf
- 
-arm-none-eabi-size   CleanCode.elf 
-arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
-   text	   data	    bss	    dec	    hex	filename
-  19924	    124	   1844	  21892	   5584	CleanCode.elf
-Finished building: default.size.stdout
- 
-Finished building: CleanCode.list
- 
-18:28:58 **** Incremental Build of configuration Debug for project CleanCode ****
-make -j12 all 
-arm-none-eabi-size   CleanCode.elf 
-   text	   data	    bss	    dec	    hex	filename
-  19924	    124	   1844	  21892	   5584	CleanCode.elf
-Finished building: default.size.stdout
- 
-18:29:59 **** Incremental Build of configuration Debug for project CleanCode ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
 ../Core/Src/myMain.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/myMain.c:79:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+../Core/Src/myMain.c:82:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |       ^~~~~~
-../Core/Src/myMain.c:79:7: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/myMain.c:13:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   12 | #include "main.h"
+../Core/Src/myMain.c:82:7: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
   +++ |+#include <stdio.h>
-   13 | 
-../Core/Src/myMain.c:79:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+   12 | 
+../Core/Src/myMain.c:82:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |                               ~^                                                ~~~~
       |                                |                                                |
       |                                int                                              uint32_t {aka long unsigned int}
       |                               %ld
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:110:3: warning: incompatible implicit declaration of built-in function 'printf'
+  110 |   printf("~~~~~~~wait~~~~~");
+      |   ^~~~~~
+../Core/Src/myMain.c:110:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/myMain.c:114:3: warning: incompatible implicit declaration of built-in function 'printf'
+  114 |   printf("deley BTN  %d\n\r\n\r", btn1.state);
+      |   ^~~~~~
+../Core/Src/myMain.c:114:3: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CleanCode.elf
  
 arm-none-eabi-size   CleanCode.elf 
 arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
    text	   data	    bss	    dec	    hex	filename
-  19928	    124	   1844	  21896	   5588	CleanCode.elf
+  20120	    124	   1844	  22088	   5648	CleanCode.elf
 Finished building: default.size.stdout
  
 Finished building: CleanCode.list
  
-18:36:45 **** Build of configuration Debug for project ArduinoBoard ****
+20:03:29 **** Incremental Build of configuration Debug for project CleanCode ****
 make -j12 all 
-arm-none-eabi-size   ArduinoBoard.elf 
-   text	   data	    bss	    dec	    hex	filename
-  22912	    124	   1844	  24880	   6130	ArduinoBoard.elf
-Finished building: default.size.stdout
- 
-18:36:45 **** Build of configuration Debug for project BuzzerPWM ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "BuzzerPWM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\BuzzerPWM\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BuzzerPWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: BuzzerPWM.elf
- 
-arm-none-eabi-size   BuzzerPWM.elf 
-arm-none-eabi-objdump -h -S  BuzzerPWM.elf  > "BuzzerPWM.list"
-   text	   data	    bss	    dec	    hex	filename
-  19140	     68	   1860	  21068	   524c	BuzzerPWM.elf
-Finished building: default.size.stdout
- 
-Finished building: BuzzerPWM.list
- 
-18:36:46 **** Incremental Build of configuration Debug for project CleanCode ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/clock.d" -MT"Core/Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/clock.o"
 arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
 ../Core/Src/myMain.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/myMain.c:79:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+../Core/Src/myMain.c:82:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |       ^~~~~~
-../Core/Src/myMain.c:79:7: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/myMain.c:13:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   12 | #include "main.h"
+../Core/Src/myMain.c:82:7: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
   +++ |+#include <stdio.h>
-   13 | 
-../Core/Src/myMain.c:79:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+   12 | 
+../Core/Src/myMain.c:82:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |                               ~^                                                ~~~~
       |                                |                                                |
       |                                int                                              uint32_t {aka long unsigned int}
       |                               %ld
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:110:3: warning: incompatible implicit declaration of built-in function 'printf'
+  110 |   printf("~~~~~~~wait~~~~~");
+      |   ^~~~~~
+../Core/Src/myMain.c:110:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/myMain.c:114:3: warning: incompatible implicit declaration of built-in function 'printf'
+  114 |   printf("deley BTN  %d\n\r\n\r", btn1.state);
+      |   ^~~~~~
+../Core/Src/myMain.c:114:3: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CleanCode.elf
  
 arm-none-eabi-size   CleanCode.elf 
 arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
    text	   data	    bss	    dec	    hex	filename
-  19948	    124	   1844	  21916	   559c	CleanCode.elf
+  20128	    124	   1844	  22096	   5650	CleanCode.elf
 Finished building: default.size.stdout
  
 Finished building: CleanCode.list
  
-18:36:47 **** Build of configuration Debug for project Clock ****
+20:04:34 **** Incremental Build of configuration Debug for project CleanCode ****
 make -j12 all 
-arm-none-eabi-size   Clock.elf 
-   text	   data	    bss	    dec	    hex	filename
-  19056	    120	   1808	  20984	   51f8	Clock.elf
-Finished building: default.size.stdout
- 
-18:36:48 **** Build of configuration Debug for project Clock_2 ****
-make -j12 all 
-arm-none-eabi-size   Clock_2.elf 
-   text	   data	    bss	    dec	    hex	filename
-  12092	     20	   1700	  13812	   35f4	Clock_2.elf
-Finished building: default.size.stdout
- 
-18:36:48 **** Build of configuration Debug for project FlashLight ****
-make -j12 all 
-arm-none-eabi-size   FlashLight.elf 
-   text	   data	    bss	    dec	    hex	filename
-  22156	    124	   1916	  24196	   5e84	FlashLight.elf
-Finished building: default.size.stdout
- 
-18:36:48 **** Build of configuration Debug for project Interrups ****
-make -j12 all 
-arm-none-eabi-size   Interrups.elf 
-   text	   data	    bss	    dec	    hex	filename
-  17168	    120	   1728	  19016	   4a48	Interrups.elf
-Finished building: default.size.stdout
- 
-18:36:49 **** Build of configuration Debug for project Memory ****
-make -j12 all 
-arm-none-eabi-size   Memory.elf 
-   text	   data	    bss	    dec	    hex	filename
-  17440	    124	   1724	  19288	   4b58	Memory.elf
-Finished building: default.size.stdout
- 
-18:36:49 **** Build of configuration Debug for project PWM_task17 ****
-make -j12 all 
-arm-none-eabi-size   PWM_task17.elf 
-   text	   data	    bss	    dec	    hex	filename
-  25684	    124	   1908	  27716	   6c44	PWM_task17.elf
-Finished building: default.size.stdout
- 
-18:36:49 **** Build of configuration Debug for project PWM_task17_2 ****
-make -j12 all 
-arm-none-eabi-size   PWM_task17_2.elf 
-   text	   data	    bss	    dec	    hex	filename
-  26668	    124	   1908	  28700	   701c	PWM_task17_2.elf
-Finished building: default.size.stdout
- 
-18:36:50 **** Build of configuration Debug for project Project_HAL_Recive ****
-make -j12 all 
-arm-none-eabi-size   Project_HAL_Recive.elf 
-   text	   data	    bss	    dec	    hex	filename
-  13484	     24	   1808	  15316	   3bd4	Project_HAL_Recive.elf
-Finished building: default.size.stdout
- 
-18:36:50 **** Build of configuration Debug for project RingBuffer ****
-make -j12 all 
-arm-none-eabi-size   RingBuffer.elf 
-   text	   data	    bss	    dec	    hex	filename
-  19924	    120	   1720	  21764	   5504	RingBuffer.elf
-Finished building: default.size.stdout
- 
-18:36:50 **** Build of configuration Debug for project UartReceiveAndCmdProcessing ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "UartReceiveAndCmdProcessing.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\UartReceiveAndCmdProcessing\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UartReceiveAndCmdProcessing.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: UartReceiveAndCmdProcessing.elf
- 
-arm-none-eabi-size   UartReceiveAndCmdProcessing.elf 
-arm-none-eabi-objdump -h -S  UartReceiveAndCmdProcessing.elf  > "UartReceiveAndCmdProcessing.list"
-   text	   data	    bss	    dec	    hex	filename
-  19452	    120	   1944	  21516	   540c	UartReceiveAndCmdProcessing.elf
-Finished building: default.size.stdout
- 
-Finished building: UartReceiveAndCmdProcessing.list
- 
-18:36:51 **** Build of configuration Debug for project UartReceiveAndCmdProcessingInterrupts ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "UartReceiveAndCmdProcessingInterrupts.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\UartReceiveAndCmdProcessingInterrupts\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UartReceiveAndCmdProcessingInterrupts.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: UartReceiveAndCmdProcessingInterrupts.elf
- 
-arm-none-eabi-size   UartReceiveAndCmdProcessingInterrupts.elf 
-arm-none-eabi-objdump -h -S  UartReceiveAndCmdProcessingInterrupts.elf  > "UartReceiveAndCmdProcessingInterrupts.list"
-   text	   data	    bss	    dec	    hex	filename
-  16872	     20	   1924	  18816	   4980	UartReceiveAndCmdProcessingInterrupts.elf
-Finished building: default.size.stdout
- 
-Finished building: UartReceiveAndCmdProcessingInterrupts.list
- 
-18:36:53 **** Build of configuration Debug for project project_1 ****
-make -j12 all 
-arm-none-eabi-size   project_1.elf 
-   text	   data	    bss	    dec	    hex	filename
-  12324	     20	   1700	  14044	   36dc	project_1.elf
-Finished building: default.size.stdout
- 
-18:36:53 **** Build of configuration Debug for project test ****
-make -j12 all 
-arm-none-eabi-size   test.elf 
-   text	   data	    bss	    dec	    hex	filename
-  17064	    120	   1720	  18904	   49d8	test.elf
-Finished building: default.size.stdout
- 
-18:36:53 **** Build of configuration Debug for project timers ****
-make -j12 all 
-arm-none-eabi-size   timers.elf 
-   text	   data	    bss	    dec	    hex	filename
-  21380	    120	   1912	  23412	   5b74	timers.elf
-Finished building: default.size.stdout
- 
-18:38:38 **** Incremental Build of configuration Debug for project CleanCode ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/clock.d" -MT"Core/Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/clock.o"
 arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
 ../Core/Src/myMain.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/myMain.c:79:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+../Core/Src/myMain.c:82:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |       ^~~~~~
-../Core/Src/myMain.c:79:7: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/myMain.c:13:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   12 | #include "main.h"
+../Core/Src/myMain.c:82:7: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
   +++ |+#include <stdio.h>
-   13 | 
-../Core/Src/myMain.c:79:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
+   12 | 
+../Core/Src/myMain.c:82:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   82 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
       |                               ~^                                                ~~~~
       |                                |                                                |
       |                                int                                              uint32_t {aka long unsigned int}
       |                               %ld
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:114:3: warning: incompatible implicit declaration of built-in function 'printf'
+  114 |   printf("deley BTN  %d\n\r\n\r", btn1.state);
+      |   ^~~~~~
+../Core/Src/myMain.c:114:3: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CleanCode.elf
  
 arm-none-eabi-size   CleanCode.elf 
 arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
    text	   data	    bss	    dec	    hex	filename
-  19948	    124	   1844	  21916	   559c	CleanCode.elf
+  20096	    124	   1844	  22064	   5630	CleanCode.elf
+Finished building: default.size.stdout
+ 
+Finished building: CleanCode.list
+ 
+20:05:30 **** Incremental Build of configuration Debug for project CleanCode ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:114:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  114 |   printf("deley BTN  %d\n\r\n\r", btn1.state);
+      |   ^~~~~~
+../Core/Src/myMain.c:114:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
+  +++ |+#include <stdio.h>
+   12 | 
+arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CleanCode.elf
+ 
+arm-none-eabi-size   CleanCode.elf 
+arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
+   text	   data	    bss	    dec	    hex	filename
+  20036	    124	   1844	  22004	   55f4	CleanCode.elf
+Finished building: default.size.stdout
+ 
+Finished building: CleanCode.list
+ 
+20:16:36 **** Incremental Build of configuration Debug for project CleanCode ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/btn.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/btn.d" -MT"Core/Src/btn.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/btn.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:108:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  108 |    printf("BTN 1   %d\n\r\n\r", state);
+      |    ^~~~~~
+../Core/Src/myMain.c:108:4: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
+  +++ |+#include <stdio.h>
+   12 | 
+../Core/Src/myMain.c:113:4: warning: incompatible implicit declaration of built-in function 'printf'
+  113 |    printf("BTN 2   %d\n\r\n\r", state);
+      |    ^~~~~~
+../Core/Src/myMain.c:113:4: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CleanCode.elf
+ 
+arm-none-eabi-size   CleanCode.elf 
+arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
+   text	   data	    bss	    dec	    hex	filename
+  20120	    124	   1844	  22088	   5648	CleanCode.elf
 Finished building: default.size.stdout
  
 Finished building: CleanCode.list

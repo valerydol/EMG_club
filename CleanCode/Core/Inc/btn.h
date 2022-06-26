@@ -9,13 +9,8 @@
 #define INC_BTN_H_
 
 #include "main.h"
+#include "clock.h"
 
-//typedef enum
-//{
-//	BTN_NON = 0,
-//	BTN_1 ,
-//	BTN_2
-//}BTN_NUMBER;
 
 typedef enum
 {
@@ -34,6 +29,8 @@ typedef struct BUTTON_
 
 
 void Button_init(BUTTON* btn, GPIO_TypeDef* GPIO_port, uint16_t GPIO_Pin);
+
+BUTTON_STATE checkBtnState(BUTTON* btn);
 
 
 #endif /* INC_BTN_H_ */

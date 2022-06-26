@@ -29,7 +29,7 @@ void resetDoubleClickTimer()
 	clockTimer.tickDoubleClickCounter = DOUBLI_CLICK_MS;
 }
 
-uint32_t getDoubleClickTimer()
+int32_t getDoubleClickTimer()
 {
 	return clockTimer.tickDoubleClickCounter;
 }

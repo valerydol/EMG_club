@@ -1,0 +1,32 @@
+/*
+ * btn.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+
+#include "btn.h"
+
+
+void Button_init(BUTTON* btn, GPIO_TypeDef* GPIO_port, uint16_t GPIO_Pin)
+{
+	btn->state = BUTTON_STATE_NONE;
+	btn->GPIO_port = GPIO_port;
+	btn->GPIO_Pin = GPIO_Pin;
+	btn-> isReady = 1;
+}
+
+
+
+void updateBtnStatus(BUTTON* btn)
+{
+	if(getDoubleClickTimer() < 0)
+	{
+		btn-> isReady = 1;
+	}
+	else
+	{
+		btn-> isReady = 0;
+	}
+}

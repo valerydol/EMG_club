@@ -1,0 +1,34 @@
+/*
+ * btn.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+
+#include "btn.h"
+
+
+void Button_init(BUTTON* btn, GPIO_TypeDef* GPIO_port, uint16_t GPIO_Pin)
+{
+	btn->state = BUTTON_STATE_NONE;
+	btn->GPIO_port = GPIO_port;
+	btn->GPIO_Pin = GPIO_Pin;
+}
+
+
+
+BUTTON_STATE checkBtnState(BUTTON* btn)
+{
+	BUTTON_STATE result = BUTTON_STATE_NONE;
+	if((btn->state == BUTTON_STATE_PRESS) && (getDoubleClickTimer() > 0))
+	{
+		//printf("~~~~~~~wait~~~~~");
+	}
+	else if (btn->state != BUTTON_STATE_NONE)
+	{
+		//printf("deley BTN  %d\n\r\n\r", btn1.state);
+		btn->state = BUTTON_STATE_NONE;
+	}
+
+}

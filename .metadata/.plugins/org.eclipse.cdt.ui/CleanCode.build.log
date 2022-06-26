@@ -1,33 +1,32 @@
-18:38:38 **** Incremental Build of configuration Debug for project CleanCode ****
+20:16:36 **** Incremental Build of configuration Debug for project CleanCode ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/clock.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/clock.d" -MT"Core/Src/clock.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/clock.o"
+arm-none-eabi-gcc "../Core/Src/btn.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/btn.d" -MT"Core/Src/btn.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/btn.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc "../Core/Src/myMain.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/myMain.d" -MT"Core/Src/myMain.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/myMain.o"
-../Core/Src/myMain.c: In function 'HAL_GPIO_EXTI_Callback':
-../Core/Src/myMain.c:79:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
-      |       ^~~~~~
-../Core/Src/myMain.c:79:7: warning: incompatible implicit declaration of built-in function 'printf'
-../Core/Src/myMain.c:13:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   12 | #include "main.h"
+../Core/Src/myMain.c: In function 'myMain':
+../Core/Src/myMain.c:108:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  108 |    printf("BTN 1   %d\n\r\n\r", state);
+      |    ^~~~~~
+../Core/Src/myMain.c:108:4: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/myMain.c:12:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   11 | #include "main.h"
   +++ |+#include <stdio.h>
-   13 | 
-../Core/Src/myMain.c:79:32: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
-   79 |       printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
-      |                               ~^                                                ~~~~
-      |                                |                                                |
-      |                                int                                              uint32_t {aka long unsigned int}
-      |                               %ld
+   12 | 
+../Core/Src/myMain.c:113:4: warning: incompatible implicit declaration of built-in function 'printf'
+  113 |    printf("BTN 2   %d\n\r\n\r", state);
+      |    ^~~~~~
+../Core/Src/myMain.c:113:4: note: include '<stdio.h>' or provide a declaration of 'printf'
 arm-none-eabi-gcc -o "CleanCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\CleanCode\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CleanCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CleanCode.elf
  
 arm-none-eabi-size   CleanCode.elf 
 arm-none-eabi-objdump -h -S  CleanCode.elf  > "CleanCode.list"
    text	   data	    bss	    dec	    hex	filename
-  19948	    124	   1844	  21916	   559c	CleanCode.elf
+  20120	    124	   1844	  22088	   5648	CleanCode.elf
 Finished building: default.size.stdout
  
 Finished building: CleanCode.list
  
 
-18:38:39 Build Finished. 0 errors, 3 warnings. (took 1s.57ms)
+20:16:37 Build Finished. 0 errors, 3 warnings. (took 1s.43ms)
 
