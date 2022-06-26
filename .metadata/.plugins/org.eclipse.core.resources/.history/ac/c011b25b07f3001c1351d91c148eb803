@@ -1,0 +1,20 @@
+/*
+ * clock.h
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+#ifndef INC_CLOCK_H_
+#define INC_CLOCK_H_
+
+static int tickCounetInMS = 0;
+
+
+void initClock();
+void incrementClock();
+
+
+
+
+#endif /* INC_CLOCK_H_ */

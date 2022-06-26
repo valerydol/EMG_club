@@ -1,0 +1,41 @@
+/*
+ * btn.h
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+#ifndef INC_BTN_H_
+#define INC_BTN_H_
+
+#include "main.h"
+
+typedef enum
+{
+	BTN_NON = 0,
+	BTN_1 ,
+	BTN_2
+}BTN_NUMBER;
+
+typedef enum
+{
+	BUTTON_STATE_NONE = 0,
+	BUTTON_STATE_PRESS,
+	BUTTON_STATE_LONG_PRESS,
+	BUTTON_STATE_DOUBLE
+}BUTTON_STATE;
+
+struct BUTTON
+{
+	BTN_NUMBER btnNum ;
+	BUTTON_STATE state ;
+
+	GPIO_TypeDef* GPIO_port;
+	uint16_t GPIO_Pin;
+};
+
+
+void initButton(BUTTON_STATE state, GPIO_TypeDef* GPIO_port, uint16_t GPIO_Pin);
+
+
+#endif /* INC_BTN_H_ */

@@ -1,0 +1,10 @@
+19:47:21 **** Incremental Build of configuration Debug for project Memory ****
+make -j12 all 
+arm-none-eabi-size   Memory.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17440	    124	   1724	  19288	   4b58	Memory.elf
+Finished building: default.size.stdout
+ 
+
+19:47:22 Build Finished. 0 errors, 0 warnings. (took 299ms)
+

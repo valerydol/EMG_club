@@ -1,0 +1,10 @@
+17:12:46 **** Incremental Build of configuration Debug for project ArduinoBoard ****
+make -j12 all 
+arm-none-eabi-size   ArduinoBoard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22912	    124	   1844	  24880	   6130	ArduinoBoard.elf
+Finished building: default.size.stdout
+ 
+
+17:12:47 Build Finished. 0 errors, 0 warnings. (took 230ms)
+

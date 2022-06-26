@@ -1,0 +1,21 @@
+/*
+ * clock.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+
+#include "clock.h"
+static struct ClockTimer clockTimer ;
+
+
+void initClock()
+{
+	tickCounetInMS = 0;
+}
+
+void incrementClock()
+{
+	tickCounetInMS++;
+}

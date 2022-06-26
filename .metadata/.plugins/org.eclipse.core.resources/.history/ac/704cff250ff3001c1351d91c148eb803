@@ -1,0 +1,19 @@
+/*
+ * btn.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+
+#include "btn.h"
+
+
+typedef enum
+{
+	BTN_NON = 0,
+	BTN_1 ,
+	BTN_2
+}BTN_NUMBER;
+
+

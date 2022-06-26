@@ -1,0 +1,32 @@
+/*
+ * clock.h
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+#ifndef INC_CLOCK_H_
+#define INC_CLOCK_H_
+
+typedef enum
+{
+	BTN_1 = 0,
+	BTN_2
+}BTN_NUMBER;
+
+struct ClockTimer{
+
+
+	int tickCounter;
+	int tickIn;
+	int tickOut;
+};
+
+
+void initClock();
+void incrementClock();
+
+
+
+
+#endif /* INC_CLOCK_H_ */

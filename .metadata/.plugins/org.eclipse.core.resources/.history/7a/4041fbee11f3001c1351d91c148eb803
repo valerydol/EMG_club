@@ -1,0 +1,16 @@
+/*
+ * btn.cpp
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+
+#include "btn.h"
+
+
+void Button_init(BUTTON_STATE state, GPIO_TypeDef* GPIO_port, uint16_t GPIO_Pin)
+{
+	button.state = BUTTON_STATE_NONE;
+
+}

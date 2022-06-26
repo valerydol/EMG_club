@@ -1,0 +1,29 @@
+/*
+ * clock.h
+ *
+ *  Created on: Jun 23, 2022
+ *      Author: student
+ */
+
+#ifndef INC_CLOCK_H_
+#define INC_CLOCK_H_
+
+
+struct ClockTimer{
+
+	int tickCounter;
+	int tickIn;
+	int tickOut;
+};
+
+
+void initClock();
+void incrementClock();
+
+void setClockIn();
+void setClockOut();
+
+
+
+
+#endif /* INC_CLOCK_H_ */

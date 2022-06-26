@@ -1,0 +1,10 @@
+21:00:00 **** Incremental Build of configuration Debug for project CleanCode ****
+make -j12 all 
+arm-none-eabi-size   CleanCode.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14472	     20	   1812	  16304	   3fb0	CleanCode.elf
+Finished building: default.size.stdout
+ 
+
+21:00:01 Build Finished. 0 errors, 0 warnings. (took 220ms)
+
