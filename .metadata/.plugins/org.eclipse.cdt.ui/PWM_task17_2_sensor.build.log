@@ -1,0 +1,10 @@
+21:02:35 **** Incremental Build of configuration Debug for project PWM_task17_2_sensor ****
+make -j12 all 
+arm-none-eabi-size   PWM_task17_2_sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  26668	    124	   1908	  28700	   701c	PWM_task17_2_sensor.elf
+Finished building: default.size.stdout
+ 
+
+21:02:35 Build Finished. 0 errors, 0 warnings. (took 239ms)
+

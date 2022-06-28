@@ -103,6 +103,8 @@ int main(void)
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
   HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
+  HAL_NVIC_EnableIRQ(TIM7_IRQn);
+
   HAL_TIM_Base_Start_IT(&htim6);
   printf("version %d", version);
 

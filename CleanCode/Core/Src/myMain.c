@@ -77,7 +77,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 						}
 						// reset IN/OUT ticks
 						resetTicks();
-
 						//printf("deley BTN  %d , %d , %d\n\r\n\r", ((GPIO_Pin == BTN_Pin)? 1 : 2), diff, pressedBtn->state);
 					}
 			}
@@ -114,7 +113,6 @@ int myMain ()
 		}
 
 	}
-
 
 	return 0;
 }

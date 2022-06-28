@@ -1,0 +1,30 @@
+20:39:22 **** Incremental Build of configuration Debug for project ADC_AB ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:73:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   73 |  printf("%d \n\r",valueLightSensor);
+      |          ~^       ~~~~~~~~~~~~~~~~
+      |           |       |
+      |           int     uint32_t {aka long unsigned int}
+      |          %ld
+../Core/Src/main.c:74:11: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   74 |  printf("%d \n\r",valuePotentiometer);
+      |          ~^       ~~~~~~~~~~~~~~~~~~
+      |           |       |
+      |           int     uint32_t {aka long unsigned int}
+      |          %ld
+arm-none-eabi-gcc -o "ADC_AB.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\student\STM32CubeIDE\workspace_1.9.0\ADC_AB\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_AB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ADC_AB.elf
+ 
+arm-none-eabi-size   ADC_AB.elf 
+arm-none-eabi-objdump -h -S  ADC_AB.elf  > "ADC_AB.list"
+   text	   data	    bss	    dec	    hex	filename
+  27980	    120	   2008	  30108	   759c	ADC_AB.elf
+Finished building: default.size.stdout
+ 
+Finished building: ADC_AB.list
+ 
+
+20:39:23 Build Finished. 0 errors, 2 warnings. (took 989ms)
+

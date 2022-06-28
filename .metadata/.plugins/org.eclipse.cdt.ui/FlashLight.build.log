@@ -1,4 +1,4 @@
-18:36:48 **** Build of configuration Debug for project FlashLight ****
+20:43:44 **** Incremental Build of configuration Debug for project FlashLight ****
 make -j12 all 
 arm-none-eabi-size   FlashLight.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   FlashLight.elf
 Finished building: default.size.stdout
  
 
-18:36:48 Build Finished. 0 errors, 0 warnings. (took 223ms)
+20:43:44 Build Finished. 0 errors, 0 warnings. (took 221ms)
 
